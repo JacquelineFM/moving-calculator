@@ -13,18 +13,18 @@ const Header = () => {
     <header>
       <nav className="bg-primary">
         <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-48 2xl:px-60">
-          <div className="flex items-center justify-between h-16 md:h-36">
+          <div className="flex items-center justify-between h-16 lg:h-36">
             <div className="w-full justify-between flex items-center">
               <a className="flex-shrink-0" href="/">
                 <Logo />
               </a>
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
                 <div className="flex items-baseline space-x-8">
                   <MenuHeader />
                 </div>
               </div>
             </div>
-            <div className="flex md:hidden">
+            <div className="flex lg:hidden">
               <button
                 className="text-white inline-flex items-center justify-center p-2 rounded-md focus:outline-none"
                 onClick={() => setIsOpen(!isOpen)}
@@ -33,7 +33,7 @@ const Header = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth="1.5"
+                  strokeWidth="2"
                   stroke="currentColor"
                   className="w-6 h-6"
                   transform="scale(-2,2)"
@@ -49,7 +49,7 @@ const Header = () => {
           </div>
         </div>
         {isOpen && (
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <MenuHeader sx="block" />
             </div>

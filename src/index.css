@@ -1,5 +1,5 @@
 /* Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap");
 
 /* @tailwind */
 @tailwind base;
@@ -10,5 +10,23 @@
 @layer base {
   html {
     font-family: Poppins, system-ui, sans-serif;
+  }
+}
+
+/* components */
+@layer components {
+  .icon-furniture {
+    @apply w-20 xl:w-16 2xl:w-20 h-20 xl:h-16 2xl:h-20;
+  }
+  .btn-form-calculator {
+    @apply w-full md:w-48 2xl:w-61 py-4 text-base font-normal shadow-md rounded-md text-gray-850 focus:outline-none transition ease-in duration-200;
+  }
+}
+
+/* utilities */
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    @apply appearance-none;
   }
 }

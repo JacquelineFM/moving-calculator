@@ -44,7 +44,7 @@ const StorageForm = () => {
           />
         ))}
       </section>
-      <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 md:justify-between my-20 md:my-16 lg:my-20">
+      <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 md:justify-between mt-20 md:mt-16 lg:mt-20">
         <button
           type="button"
           className="btn-form-calculator border-2 border-primary hover:bg-primary"

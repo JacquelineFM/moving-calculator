@@ -7,9 +7,9 @@ const StorageCalculator = () => {
   return (
     <section
       id="storageCalculator"
-      className="container mx-auto px-6 md:px-16 xl:px-20 py-20 md:py-28 lg:py-40 flex flex-col space-y-10 md:space-y-20"
+      className="flex flex-col space-y-10 md:space-y-20"
     >
-      <div className="text-center mx-auto">
+      <article className="text-center mx-auto">
         <h2 className="text-3xl md:text-5xl font-normal text-secondary leading-10">
           What items to store?
         </h2>
@@ -17,7 +17,7 @@ const StorageCalculator = () => {
           Select which items you wish to store before moving to your new home.
           We’ll keep ’em safe!
         </p>
-      </div>
+      </article>
       <StorageForm />
     </section>
   );

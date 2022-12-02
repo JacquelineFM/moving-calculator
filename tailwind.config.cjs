@@ -23,6 +23,9 @@ module.exports = {
         14.5: "14.5%",
         71: "71%",
       },
+      borderWidth: {
+        3: "3px",
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,5 @@
 /* Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
 /* @tailwind */
 @tailwind base;
@@ -20,6 +20,21 @@
   }
   .btn-form-calculator {
     @apply w-full md:w-48 2xl:w-61 py-4 text-base font-normal shadow-md rounded-md text-gray-850 focus:outline-none transition ease-in duration-200;
+  }
+  .li-footer {
+    @apply w-full h-full lg:flex lg:justify-center;
+  }
+  .li-div-footer {
+    @apply text-center md:text-start flex flex-col items-center md:items-start justify-center lg:justify-start;
+  }
+  .link-footer {
+    @apply text-base xl:text-sm transition-colors duration-200 hover:underline hover:underline-offset-8 hover:decoration-1 py-2;
+  }
+  .link-social-media {
+    @apply flex items-center p-3 xl:p-2 transition ease-in duration-200 rounded-full border-3 border-white focus:outline-none;
+  }
+  .icon-social-media {
+    @apply w-6 h-6 xl:w-4 xl:h-4 transition-colors duration-200;
   }
 }
 

@@ -1,5 +1,6 @@
 // layout
 import Header from "../layout/main/Header";
+import Footer from "../layout/main/Footer";
 // sections
 import StorageCalculator from "../sections/calculator/StorageCalculator";
 import StorageSummary from "../sections/calculator/StorageSummary";
@@ -14,6 +15,7 @@ const Calculator = () => {
         <StorageCalculator />
         <StorageSummary />
       </div>
+      <Footer />
     </>
   );
 };

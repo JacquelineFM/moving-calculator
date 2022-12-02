@@ -1,5 +1,5 @@
 /* Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
 /* @tailwind */
 @tailwind base;
@@ -10,5 +10,44 @@
 @layer base {
   html {
     font-family: Poppins, system-ui, sans-serif;
+  }
+}
+
+/* components */
+@layer components {
+  .link-menu-header {
+    @apply text-white hover:underline hover:underline-offset-8 hover:decoration-1 px-3 py-2 text-base font-normal leading-7;
+  }
+  .icon-furniture {
+    @apply w-20 xl:w-16 2xl:w-20 h-20 xl:h-16 2xl:h-20;
+  }
+  .btn-form-calculator {
+    @apply w-full md:w-48 2xl:w-61 py-4 text-base font-normal shadow-md rounded-md text-gray-850 focus:outline-none transition ease-in duration-200;
+  }
+  .li-footer {
+    @apply w-full h-full lg:flex lg:justify-center;
+  }
+  .li-div-footer {
+    @apply text-center md:text-start flex flex-col items-center md:items-start justify-center lg:justify-start;
+  }
+  .link-footer {
+    @apply text-base xl:text-sm transition-colors duration-200 hover:underline hover:underline-offset-8 hover:decoration-1 py-2;
+  }
+  .link-social-media {
+    @apply flex items-center p-3 xl:p-2 transition ease-in duration-200 rounded-full border-3 border-white focus:outline-none;
+  }
+  .icon-social-media {
+    @apply w-6 h-6 xl:w-4 xl:h-4 transition-colors duration-200;
+  }
+  .btn-counter {
+    @apply border-2 border-gray-450 bg-gray-450 hover:bg-gray-300 hover:border-gray-300 h-12 basis-14.5 md:basis-1/4 xl:basis-1/5 cursor-pointer;
+  }
+}
+
+/* utilities */
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    @apply appearance-none;
   }
 }

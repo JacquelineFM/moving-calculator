@@ -10,7 +10,7 @@ const FurnitureItem = ({ item, name }) => {
         </div>
       </div>
       <div className="flex flex-row h-12 w-full">
-        <button className="border-2 border-gray-450 bg-gray-450 hover:bg-gray-300 hover:border-gray-300 h-12 basis-14.5 md:basis-1/4 xl:basis-1/5 rounded-l-md cursor-pointer">
+        <button className="btn-counter rounded-l-md">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -33,7 +33,7 @@ const FurnitureItem = ({ item, name }) => {
           value={0}
           onChange={(e) => e.target.value}
         />
-        <button className="border-2 border-gray-450 bg-gray-450 hover:bg-gray-300 hover:border-gray-300 h-12 basis-14.5 md:basis-1/4 xl:basis-1/5 rounded-r-md cursor-pointer">
+        <button className="btn-counter rounded-r-md">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

@@ -6,6 +6,15 @@ import MenuHeader from "./MenuHeader";
 
 // ----------------------------------------------------------------------
 
+const navConfig = [
+  ["How We Work", "/#"],
+  ["Services", "/#"],
+  ["Free Quote", "/#"],
+  ["Contact", "/#"],
+];
+
+// ----------------------------------------------------------------------
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,13 +29,13 @@ const Header = () => {
               </a>
               <div className="hidden lg:block">
                 <div className="flex items-baseline space-x-8">
-                  <MenuHeader />
+                  <MenuHeader navConfig={navConfig} />
                 </div>
               </div>
             </div>
             <div className="flex lg:hidden">
               <button
-                className="text-white inline-flex items-center justify-center p-2 rounded-md focus:outline-none"
+                className="text-white p-2 focus:outline-none"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <svg
@@ -50,8 +59,8 @@ const Header = () => {
         </div>
         {isOpen && (
           <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <MenuHeader sx="block" />
+            <div className="px-2 py-3 space-y-1 sm:px-3">
+              <MenuHeader navConfig={navConfig} sx="block" />
             </div>
           </div>
         )}

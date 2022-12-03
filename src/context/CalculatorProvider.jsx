@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, useEffect, createContext } from "react";
 // data
 import { FURNITURE } from "../data/DefaultFurniture";
 
@@ -18,6 +18,10 @@ const CalculatorProvider = ({ children }) => {
     dueToday: 0,
   });
   const [furniture, setFurniture] = useState(FURNITURE);
+
+  useEffect(() => {
+    handleMakeQuotes();
+  }, [furniture]);
 
   /**
    * When the user clicks on the plus or minus button, the quantity of the item is updated.
@@ -78,12 +82,10 @@ const CalculatorProvider = ({ children }) => {
   };
 
   /**
-   * When the user clicks the button, the function will calculate the total items, total M2, subtotal,
-   * tax, total and due today 50% and then set the summary state with the calculated values.
+   * The handleMakeQuotes function is called when the user clicks the button. It calculates the total
+   * items, total M2, subtotal, tax, total and due today 50% and sets the summary state.
    */
-  const handleMakeQuotes = (e) => {
-    e.preventDefault();
-
+  const handleMakeQuotes = () => {
     let totalItems = 0;
     let totalMm = 0;
 
@@ -116,7 +118,6 @@ const CalculatorProvider = ({ children }) => {
         handleCounter,
         handleUpdateCounter,
         handleClear,
-        handleMakeQuotes,
       }}
     >
       {children}

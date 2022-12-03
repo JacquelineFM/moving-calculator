@@ -9,10 +9,18 @@ const CalculatorContext = createContext();
 // ----------------------------------------------------------------------
 
 const CalculatorProvider = ({ children }) => {
+  const [summary, setSummary] = useState({
+    totalItems: 0,
+    totalMm: 0,
+    subTotal: 0,
+    tax: 0,
+    total: 0,
+    dueToday: 0,
+  });
   const [furniture, setFurniture] = useState(FURNITURE);
 
   /**
-   * When the user clicks the plus or minus button, update the quantity of the item in the array.
+   * When the user clicks on the plus or minus button, the quantity of the item is updated.
    */
   const handleCounter = (idx, ac) => (e) => {
     e.preventDefault();
@@ -50,12 +58,45 @@ const CalculatorProvider = ({ children }) => {
     return;
   };
 
+  /**
+   * When the user clicks the button, the function will calculate the total items, total M2, subtotal,
+   * tax, total and due today 50% and then set the summary state with the calculated values.
+   */
+  const handleMakeQuotes = (e) => {
+    e.preventDefault();
+
+    let totalItems = 0;
+    let totalMm = 0;
+
+    // Total Items and Total M2
+    furniture.map(({ quantity }) => (totalItems += quantity));
+    furniture.map(({ quantity, value }) => (totalMm += quantity * value));
+
+    // Subtotal, Tax, Total and Due Today 50%
+    let subTotal = totalMm * 200;
+    let tax = subTotal * 0.16;
+    let total = subTotal + tax;
+    let dueToday = total * 0.5;
+
+    // Summary
+    setSummary({
+      totalItems,
+      totalMm,
+      subTotal,
+      tax,
+      total,
+      dueToday,
+    });
+  };
+
   return (
     <CalculatorContext.Provider
       value={{
+        summary,
         furniture,
         handleCounter,
         handleUpdateCounter,
+        handleMakeQuotes,
       }}
     >
       {children}

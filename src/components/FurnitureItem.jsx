@@ -33,8 +33,10 @@ const FurnitureItem = ({ idx, item, handleCounter, handleUpdateCounter }) => {
           </svg>
         </button>
         <input
-          name="quantity"
+          min="0"
+          pattern="^[0-9]+"
           type="number"
+          name="quantity"
           className="border border-gray-450 focus:outline-none focus:border-gray-300 text-center h-12 text-md basis-71 md:basis-2/4 xl:basis-3/5 w-[inherit]"
           value={quantity}
           onChange={handleUpdateCounter(idx)}

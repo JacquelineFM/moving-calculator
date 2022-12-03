@@ -19,7 +19,7 @@ export const FURNITURE = [
   { icon: <Oven />, name: "Oven", value: 0.6, quantity: 0 },
   { icon: <Sofa />, name: "Sofa", value: 1.5, quantity: 0 },
   { icon: <TV />, name: "TV", value: 0.25, quantity: 0 },
-  { icon: <WasherDryer />, name: "Washer-dryer", value: 1.2, quantity: 0 },
+  { icon: <WasherDryer />, name: "Washer-dryer", value: 0.5, quantity: 0 },
   { icon: <Dining />, name: "Dining", value: 2, quantity: 0 },
   { icon: <Desk />, name: "Desk", value: 0.75, quantity: 0 },
   { icon: <Wardrobe />, name: "Wardrobe", value: 3.2, quantity: 0 },

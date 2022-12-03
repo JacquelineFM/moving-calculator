@@ -1,6 +1,6 @@
 import { useContext } from "react";
 // contexts
-import CalculatorContext from "../context/CalculatorProvider";
+import CalculatorContext from "../contexts/CalculatorProvider";
 
 // ----------------------------------------------------------------------
 

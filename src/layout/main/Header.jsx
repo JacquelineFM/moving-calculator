@@ -1,17 +1,10 @@
 import { useState } from "react";
 // components
 import Logo from "../../components/Logo";
+// data
+import { navConfig } from "../../data/DefaultNavConfig";
 //
 import MenuHeader from "./MenuHeader";
-
-// ----------------------------------------------------------------------
-
-const navConfig = [
-  ["How We Work", "/#"],
-  ["Services", "/#"],
-  ["Free Quote", "/#"],
-  ["Contact", "/#"],
-];
 
 // ----------------------------------------------------------------------
 

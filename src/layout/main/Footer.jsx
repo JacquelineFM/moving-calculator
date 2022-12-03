@@ -1,18 +1,10 @@
-// icons
-import Twitter from "../../assets/icon_twitter";
-import Facebook from "../../assets/icon_facebook";
-import Instagram from "../../assets/icon_instagram";
+// assets
 import WhatsApp from "../../assets/icon_whatsapp";
-//
+// data
+import { SOCIALMEDIA } from "../../data/DefaultSocialMedia";
+import { navConfigFooter } from "../../data/DefaultNavConfig";
+// components
 import Logo from "../../components/Logo";
-
-// ----------------------------------------------------------------------
-
-const SOCIALMEDIA = [
-  { icon: <Twitter />, url: "https://twitter.com" },
-  { icon: <Facebook />, url: "https://www.facebook.com" },
-  { icon: <Instagram />, url: "https://www.instagram.com" },
-];
 
 // ----------------------------------------------------------------------
 
@@ -42,74 +34,31 @@ const Footer = () => {
               </div>
             </div>
           </li>
-          <li className="li-footer">
-            <div className="li-div-footer space-y-6 lg:space-y-12">
-              <h2 className="md:mt-7">About Us</h2>
-              <ul className="flex flex-col gap-2">
-                <li className="link-footer">
-                  <a href="#">About</a>
-                </li>
-                <li className="link-footer">
-                  <a href="#">Privacy & Policy</a>
-                </li>
-                <li className="link-footer">
-                  <a href="#">Terms & Conditions</a>
-                </li>
-                <li className="link-footer">
-                  <a href="#">FAQ</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="li-footer">
-            <div className="li-div-footer space-y-6 lg:space-y-12">
-              <h2 className="md:mt-7">Navigate</h2>
-              <ul className="flex flex-col gap-2">
-                <li className="link-footer">
-                  <a href="#">How We Work</a>
-                </li>
-                <li className="link-footer">
-                  <a href="#">Services</a>
-                </li>
-                <li className="link-footer">
-                  <a href="#">FAQ</a>
-                </li>
-                <li className="link-footer">
-                  <a href="#">Contact</a>
-                </li>
-                <li className="link-footer">
-                  <a href="#">Free Quote</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="li-footer">
-            <div className="li-div-footer space-y-6 lg:space-y-12">
-              <h2 className="md:mt-7">Contact Us</h2>
-              <ul className="flex flex-col gap-2">
-                <li className="link-footer">
-                  <a href="#">Ricardo Margain 444</a>
-                </li>
-                <li className="link-footer">
-                  <a href="tel:+52-81-1234-5678">Call: +52 81 1234 5678</a>
-                </li>
-                <li className="link-footer">
-                  <a href="mailto:info@challenge.com">
-                    Email: info@challenge.com
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.whatsapp.com"
-                    target="_blank"
-                    className="mt-8 py-2 w-full text-white font-semibold text-xl xl:text-lg tracking-wide rounded-md flex justify-center items-center border-3 border-white"
-                  >
-                    <WhatsApp /> WhatsApp
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
+          {navConfigFooter.map(({ subheader, items }, idx) => (
+            <li key={idx} className="li-footer">
+              <div className="li-div-footer space-y-6 lg:space-y-12">
+                <h2 className="md:mt-7">{subheader}</h2>
+                <ul className="flex flex-col gap-2">
+                  {items.map((link, idx) => (
+                    <li key={idx} className="link-footer">
+                      <a href={link.path}>{link.title}</a>
+                    </li>
+                  ))}
+                  {idx === 2 && (
+                    <li>
+                      <a
+                        href="https://www.whatsapp.com"
+                        target="_blank"
+                        className="mt-8 py-2 w-full text-white font-semibold text-xl xl:text-lg tracking-wide rounded-md flex justify-center items-center border-3 border-white"
+                      >
+                        <WhatsApp /> WhatsApp
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
     </footer>

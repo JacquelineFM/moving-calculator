@@ -6,8 +6,13 @@ import FurnitureItem from "../../components/FurnitureItem";
 // ----------------------------------------------------------------------
 
 const StorageForm = () => {
-  const { furniture, handleCounter, handleUpdateCounter, handleMakeQuotes } =
-    useCalculator();
+  const {
+    furniture,
+    handleCounter,
+    handleUpdateCounter,
+    handleClear,
+    handleMakeQuotes,
+  } = useCalculator();
 
   return (
     <form className="w-full" onSubmit={handleMakeQuotes}>
@@ -29,6 +34,7 @@ const StorageForm = () => {
         <button
           type="button"
           className="btn-form-calculator border-2 border-primary hover:bg-primary"
+          onClick={handleClear}
         >
           Clear
         </button>

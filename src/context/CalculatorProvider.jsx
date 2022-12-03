@@ -59,6 +59,25 @@ const CalculatorProvider = ({ children }) => {
   };
 
   /**
+   * It takes the current state of the furniture array and maps over it, returning a new array with the
+   * same objects but with a quantity of 0.
+   *
+   * It then takes the current state of the summary object and reduces it to a new object with the same
+   * keys but with a value of 0.
+   */
+  const handleClear = (e) => {
+    e.preventDefault();
+
+    setFurniture((furniture) =>
+      furniture.map((item) => ({ ...item, quantity: 0 }))
+    );
+
+    setSummary((key) =>
+      Object.keys(key).reduce((ac, curr) => ({ ...ac, [curr]: 0 }), {})
+    );
+  };
+
+  /**
    * When the user clicks the button, the function will calculate the total items, total M2, subtotal,
    * tax, total and due today 50% and then set the summary state with the calculated values.
    */
@@ -96,6 +115,7 @@ const CalculatorProvider = ({ children }) => {
         furniture,
         handleCounter,
         handleUpdateCounter,
+        handleClear,
         handleMakeQuotes,
       }}
     >

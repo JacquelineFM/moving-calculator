@@ -82,16 +82,16 @@ const CalculatorProvider = ({ children }) => {
   };
 
   /**
-   * The handleMakeQuotes function is called when the user clicks the button. It calculates the total
-   * items, total M2, subtotal, tax, total and due today 50% and sets the summary state.
+   * The handleMakeQuotes function is called when the user clicks the button, and it calculates the total
+   * items, total M2, subtotal, tax, total, and due today 50%.
    */
   const handleMakeQuotes = () => {
-    let totalItems = 0;
-    let totalMm = 0;
-
     // Total Items and Total M2
-    furniture.map(({ quantity }) => (totalItems += quantity));
-    furniture.map(({ quantity, value }) => (totalMm += quantity * value));
+    let totalItems = furniture.reduce((ac, { quantity }) => ac + quantity, 0);
+    let totalMm = furniture.reduce(
+      (ac, { quantity, value }) => ac + quantity * value,
+      0
+    );
 
     // Subtotal, Tax, Total and Due Today 50%
     let subTotal = totalMm * 200;

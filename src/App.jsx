@@ -1,5 +1,5 @@
 // contexts
-import { CalculatorProvider } from "./context/CalculatorProvider";
+import { CalculatorProvider } from "./contexts/CalculatorProvider";
 // pages
 import Calculator from "./pages/Calculator";
 
